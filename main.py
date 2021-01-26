@@ -4,7 +4,7 @@
 #handle the inputs 
 #handle the turns
 #check Win 
-#check tie 
+#check tie.......
 
 #game board to play game
 game_board = ['-','-','-',
@@ -19,11 +19,10 @@ def display_game():
 
 
 
-#initialising the player and the game
+#initialising the players
 curr_player = 'x'
 game_is_running = True
 
-#handling the inputs of current player
 def handle_input():
   global curr_player
   position = int(input("choose an empty position : "))
@@ -32,10 +31,7 @@ def handle_input():
     print('invalid input, select a valid position : ')
   else:
     game_board[position] = curr_player
-    #turning the player after making changes to the board
     handle_turn()
-
-#handling the turn of the player
 def handle_turn():
   global curr_player
   if(curr_player == 'x'):
@@ -84,7 +80,9 @@ def diagonal_check():
     return True
   return False
 
-#end game if it is a tie
+
+
+
 def check_tie():
   global game_is_running
   if('-' in game_board):
@@ -110,5 +108,10 @@ def play_game():
   elif tie:
     print("ah! Its's a tie")
 
-#playing the game
 play_game()
+
+
+
+
+
+
